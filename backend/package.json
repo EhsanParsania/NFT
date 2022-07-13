@@ -9,11 +9,11 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "coverage": "nyc jasmine",
     "lint": "eslint --cache ./cloud && eslint --cache index.js && eslint --cache ./spec",
     "lint-fix": "eslint --cache --fix ./cloud && eslint --cache --fix index.js && eslint --cache --fix ./spec",
     "prettier": "prettier --write '{cloud,spec}/{**/*,*}.js' 'index.js'",
-    "start": "node index.js",
     "test": "mongodb-runner start && jasmine",
     "watch": "nodemon index.js"
   },
@@ -27,7 +27,7 @@
     "eslint": "8.15.0",
     "jasmine": "4.1.0",
     "mongodb-runner": "4.9.0",
-    "nodemon": "2.0.16",
+    "nodemon": "^2.0.16",
     "nyc": "15.1.0",
     "prettier": "2.6.2"
   },
