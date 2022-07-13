@@ -9,7 +9,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "cross-env NODE_ENV=development nodemon index.js",
     "coverage": "nyc jasmine",
     "lint": "eslint --cache ./cloud && eslint --cache index.js && eslint --cache ./spec",
     "lint-fix": "eslint --cache --fix ./cloud && eslint --cache --fix index.js && eslint --cache --fix ./spec",
@@ -18,6 +18,7 @@
     "watch": "nodemon index.js"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "express": "4.18.1",
     "parse": "3.4.2",
     "parse-server": "5.2.1"
