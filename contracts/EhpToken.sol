@@ -14,8 +14,12 @@ contract EhpToken is ERC20 {
         admin = msg.sender;
     }
 
-    function mint(address _to, uint256 amount) external {
+    function mint(address to, uint amount) external {
         require(msg.sender == admin, "Only admin can mint !");
-        _mint(_to, amount);
+        _mint(to, amount);
+    }
+
+    function burn(uint amount) external {
+      _burn(msg.sender,amount);
     }
 }
