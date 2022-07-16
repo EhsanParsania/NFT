@@ -22,6 +22,18 @@ const mnemonic = fs.readFileSync(".secret").toString().trim();
 const Key = "N32IGQG3M36B2IF37QIHHVI47UNP4P6EM5";
 module.exports = {
   networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 8585,
+      network_id: "*" // Match any network id
+
+      // you can handle network id in helper js and metamask extention by 
+      // name :  local network
+      // id : '0x69' (  converted id will be 105 )
+      // rpc url: 'HTTP://127.0.0.1:8585'
+      // currency symbol : ETH
+      
+    },
     testnet: {
       provider: () =>
         new HDWalletProvider(
