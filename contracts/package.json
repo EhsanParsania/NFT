@@ -1,0 +1,36 @@
+{
+  "name": "eph-token",
+  "version": "1.0.0",
+  "description": "Blockchain Contracts Powered By Ethereum",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "rm -rf build && truffle compile",
+    "migrate": "truffle migrate --reset --network testnet",
+    "cm": "npm run compile && npm run migrate",
+    "migrate:no-compile": "truffle migrate --compile-none --reset --network testnet",
+    "verify": "truffle verify EhpToken --network testnet",
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && sexit 1"
+  },
+  "author": "ehsan.parsa69@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "bootstrap": "4.1.3",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2",
+    "lite-server": "^2.3.0",
+    "nodemon": "^1.17.3",
+    "truffle": "^5.5.22",
+    "truffle-contract": "3.0.6",
+    "truffle-plugin-verify": "^0.5.25"
+  },
+  "dependencies": {
+    "web3": "^1.7.4"
+  }
+}
