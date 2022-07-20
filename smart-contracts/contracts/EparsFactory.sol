@@ -10,4 +10,9 @@ contract EparsFactory is EPARS {
     constructor() {
         factoryOwner = msg.sender;
     }
+
+    modifier onlyfactoryOwner() {
+        require(msg.sender == factoryOwner);
+        _;
+    }
 }
