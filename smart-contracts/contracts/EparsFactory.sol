@@ -15,4 +15,13 @@ contract EparsFactory is EPARS {
         require(msg.sender == factoryOwner);
         _;
     }
+    
+    function sendGift(address _to, uint256 _amount)
+        external
+        onlyfactoryOwner
+        returns (bool success)
+    {
+        EPARS.transfer(_to, _amount);
+        return true;
+    }
 }
