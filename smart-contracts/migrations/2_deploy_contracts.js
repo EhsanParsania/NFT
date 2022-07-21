@@ -1,5 +1,5 @@
-const EhpToken = artifacts.require("./EhpToken.sol");
+const EparsFactory = artifacts.require("./EparsFactory.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(EhpToken);
+  deployer.deploy(EparsFactory);
 };
