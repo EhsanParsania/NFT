@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "./EPARS.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract EparsFactory is EPARS {
     address public factoryOwner;
