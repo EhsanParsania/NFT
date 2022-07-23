@@ -4,11 +4,14 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract EparsFactory is EPARS {
-    address public factoryOwner;
 
-    constructor() {
+contract EparsFactory {
+    address public factoryOwner;
+    IERC20 public tokenAddress;
+
+    constructor(IERC20 _tokenAddress) {
         factoryOwner = msg.sender;
+        tokenAddress = _tokenAddress;
     }
 
     modifier onlyfactoryOwner() {
