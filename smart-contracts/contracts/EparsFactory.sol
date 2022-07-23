@@ -18,13 +18,13 @@ contract EparsFactory {
         require(msg.sender == factoryOwner);
         _;
     }
-    
+
     function sendGift(address _to, uint256 _amount)
         external
         onlyfactoryOwner
         returns (bool success)
     {
-        EPARS.transfer(_to, _amount);
+        tokenAddress.transfer(_to, _amount);
         return true;
     }
 }
