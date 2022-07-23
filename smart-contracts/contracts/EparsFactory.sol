@@ -27,4 +27,12 @@ contract EparsFactory {
         tokenAddress.transfer(_to, _amount);
         return true;
     }
+
+    function getBalance(address _owner)
+        external
+        view
+        returns (uint256 balance)
+    {
+        return tokenAddress.balanceOf(_owner);
+    }
 }
