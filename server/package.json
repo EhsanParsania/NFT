@@ -8,31 +8,42 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "dependencies": {
+    "dotenv-flow": "^3.2.0",
+    "express": "4.17.1",
+    "kerberos": "*",
+    "parse": "3.4.1",
+    "parse-server": "4.4.0",
+    "stripe": "^8.201.0",
+    "web3": "^1.7.0"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon index.js",
-    "coverage": "nyc jasmine",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "lint": "eslint --cache ./cloud && eslint --cache index.js && eslint --cache ./spec",
     "lint-fix": "eslint --cache --fix ./cloud && eslint --cache --fix index.js && eslint --cache --fix ./spec",
-    "prettier": "prettier --write '{cloud,spec}/{**/*,*}.js' 'index.js'",
     "test": "mongodb-runner start && jasmine",
-    "watch": "nodemon index.js"
-  },
-  "dependencies": {
-    "cross-env": "^7.0.3",
-    "express": "4.18.1",
-    "parse": "3.4.2",
-    "parse-server": "5.2.1"
+    "coverage": "nyc jasmine",
+    "prettier": "prettier --write '{cloud,spec}/{**/*,*}.js' 'index.js'",
+    "watch": "babel-watch index.js"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.17.0",
-    "eslint": "8.15.0",
-    "jasmine": "4.1.0",
-    "mongodb-runner": "4.9.0",
-    "nodemon": "^2.0.16",
+    "babel-eslint": "10.1.0",
+    "babel-watch": "7.4.0",
+    "cross-env": "^7.0.3",
+    "eslint": "7.19.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "jasmine": "3.6.4",
+    "mongodb": "^4.1.3",
+    "mongodb-runner": "4.8.1",
+    "nodemon": "^2.0.15",
     "nyc": "15.1.0",
-    "prettier": "2.6.2"
+    "prettier": "2.2.1"
   },
   "engines": {
-    "node": ">=12.22.10 <19"
+    "node": ">14"
   }
 }
