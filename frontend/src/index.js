@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Parse from 'parse'
+
+Parse.initialize(process.env.REACT_APP_PARSE_APP_ID, process.env.REACT_APP_PARSE_JAVASCRIPT_KEY);
+Parse.serverURL = process.env.REACT_APP_PARSE_SERVER_URL
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
