@@ -1,17 +1,24 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.7.0 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-
 contract EparsFactory {
-    address public factoryOwner;
     IERC20 public tokenAddress;
+    address public factoryOwner;
+    uint256 public nftCount = 0;
+
+    mapping(uint256 => NFT) public allNFTs;
 
     constructor(IERC20 _tokenAddress) {
         factoryOwner = msg.sender;
         tokenAddress = _tokenAddress;
+    }
+
+    struct NFT {
+        uint256 _id;
+        string pic;
     }
 
     modifier onlyfactoryOwner() {
@@ -34,5 +41,14 @@ contract EparsFactory {
         returns (uint256 balance)
     {
         return tokenAddress.balanceOf(_owner);
+    }
+
+    function mintNFT(string memory _pic) public {
+        allNFTs[nftCount] = NFT(nftCount, _pic);
+        incrementCount();
+    }
+
+    function incrementCount() internal {
+        nftCount += 1;
     }
 }
