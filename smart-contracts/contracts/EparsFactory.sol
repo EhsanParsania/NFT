@@ -18,7 +18,7 @@ contract EparsFactory {
 
     struct NFT {
         uint256 _id;
-        string pic;
+        string base64Photo;
     }
 
     modifier onlyfactoryOwner() {
@@ -43,8 +43,8 @@ contract EparsFactory {
         return tokenAddress.balanceOf(_owner);
     }
 
-    function mintNFT(string memory _pic) public {
-        allNFTs[nftCount] = NFT(nftCount, _pic);
+    function mintNFT(string memory base64Photo) public {
+        allNFTs[nftCount] = NFT(nftCount, base64Photo);
         incrementCount();
     }
 

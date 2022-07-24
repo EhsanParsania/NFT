@@ -33,7 +33,7 @@
 					},
 					{
 						"internalType": "string",
-						"name": "pic",
+						"name": "base64Photo",
 						"type": "string"
 					}
 				],
@@ -76,7 +76,7 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_pic",
+						"name": "base64Photo",
 						"type": "string"
 					}
 				],
@@ -196,11 +196,11 @@
 			]
 		},
 		"EparsFactory.sol": {
-			"keccak256": "0xb9dc9053f7ff59bbc9fd40a4f74f6dc31f7b4190e6ae99b0e744071d357c3182",
+			"keccak256": "0x54f2f7b010db09973ff6a7ff7b0b0f620df9c53d55770110cd75de0bf2b81cc3",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0d509f2ab35b1ca62ebe68d7144bb79e7c451b5bb49455694636f9dbf26a425f",
-				"dweb:/ipfs/QmPACXN1UPwzunJrxrLTKiHaBtuvjbu8FAZoD5BcVncqaM"
+				"bzz-raw://459d5d480f8dd11c5d9538cd97658bc4edfd651decd7ac9e946ca21c811e97a1",
+				"dweb:/ipfs/QmbKDZ8S6mnb7ee34DXeEg2KrdZvkbt2GHT4Te6m2der4H"
 			]
 		}
 	},
