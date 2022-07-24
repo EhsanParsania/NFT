@@ -87,7 +87,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "nftCount",
+				"name": "peopleCount",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -149,7 +149,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"EparsFactory.sol": "EparsFactory"
+			"EparsFactory.sol": "indexPeopleWithMapping"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -196,11 +196,11 @@
 			]
 		},
 		"EparsFactory.sol": {
-			"keccak256": "0xb9dc9053f7ff59bbc9fd40a4f74f6dc31f7b4190e6ae99b0e744071d357c3182",
+			"keccak256": "0x7c5303eaa11415f4dce6297898b63a3910d5be630b600303fd994bcc057e98d5",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0d509f2ab35b1ca62ebe68d7144bb79e7c451b5bb49455694636f9dbf26a425f",
-				"dweb:/ipfs/QmPACXN1UPwzunJrxrLTKiHaBtuvjbu8FAZoD5BcVncqaM"
+				"bzz-raw://40427515343615a9727832944333d9d646acccb8bc942d357fe2d9cf3168c3e2",
+				"dweb:/ipfs/QmQaq5zp5JWRH85sH1MxBsiNA5TF88rowiUwNth2yUoHff"
 			]
 		}
 	},
