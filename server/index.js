@@ -1,4 +1,4 @@
-require('dotenv-flow').config()
+require('dotenv-flow').config();
 const express = require('express');
 const ParseServer = require('parse-server').ParseServer;
 const path = require('path');

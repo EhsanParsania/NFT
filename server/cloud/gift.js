@@ -22,4 +22,4 @@ Parse.Cloud.define('send-gift-token', async req => {
   gift.set('userWallet', userWallet);
   await gift.save({}, { useMasterKey: true });
   return { success: true };
-})
+});
