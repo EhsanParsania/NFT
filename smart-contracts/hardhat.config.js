@@ -1,6 +1,7 @@
 require('dotenv-flow').config()
 require('@nomicfoundation/hardhat-toolbox')
 require('@nomiclabs/hardhat-etherscan')
+require('hardhat-watcher')
 
 
 
@@ -33,6 +34,11 @@ module.exports = {
       rinkeby: process.env.ETHERSCAN_APIKEY_RINKEBY
     }
   },
+  watcher: {
+    test: {
+      tasks: [{ command: 'test', params: { testFiles: ['{path}'] } }],
+      files: ['./test/**/*'],
+      verbose: true
     }
   }
 }
