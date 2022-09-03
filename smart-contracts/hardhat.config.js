@@ -12,6 +12,20 @@ module.exports = {
     hardhat: {
       chainId: 1337,
       allowUnlimitedContractSize: true
+    },
+    bscTestnet: {
+      url: process.env.RPC_URL_BSCTEST,
+      accounts
+    },
+    bscMain: {
+      url: process.env.RPC_URL_BSCMAIN,
+      accounts
+    },
+    goerli: {
+      url: process.env.RPC_URL_GOERLI,
+      accounts
+    }
+  },
     }
   }
 }
