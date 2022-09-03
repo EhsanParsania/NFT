@@ -1,3 +1,4 @@
+require('dotenv-flow').config()
 require('@nomicfoundation/hardhat-toolbox')
 
 module.exports = {
