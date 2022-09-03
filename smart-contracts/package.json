@@ -37,7 +37,10 @@
     "nodemon": "^1.17.3",
     "truffle": "^5.5.22",
     "truffle-contract": "3.0.6",
-    "truffle-plugin-verify": "^0.5.25"
+    "truffle-plugin-verify": "^0.5.25",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
   },
   "dependencies": {
     "web3": "^1.7.4"
