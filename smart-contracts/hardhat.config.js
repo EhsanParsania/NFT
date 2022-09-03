@@ -26,6 +26,13 @@ module.exports = {
       accounts
     }
   },
+  etherscan: {
+    apiKey: {
+      bscTestnet: process.env.ETHERSCAN_APIKEY_BSCTEST,
+      bscMain: process.env.ETHERSCAN_APIKEY_BSCMAIN,
+      rinkeby: process.env.ETHERSCAN_APIKEY_RINKEBY
+    }
+  },
     }
   }
 }
