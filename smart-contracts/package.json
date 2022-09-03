@@ -15,7 +15,14 @@
     "migrate:no-compile": "truffle migrate --compile-none --reset --network testnet",
     "verify": "truffle run verify EhpToken --network testnet",
     "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && sexit 1"
+    "test": "echo \"Error: no test specified\" && sexit 1",
+    "hardhat:format": "standard --fix",
+    "hardhat:compile": "cross-env NODE_NO_WARNINGS=1 hardhat compile",
+    "hardhat:test": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat test",
+    "hardhat:test:watch": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat watch test",
+    "hardhat:node": "hardhat node",
+    "hardhat:deploy:testnet": "cross-env NODE_ENV=dev.local GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network bscTestnet",
+    "hardhat:deploy": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network localhost"
   },
   "author": "ehsan.parsa69@gmail.com",
   "license": "MIT",
