@@ -3,8 +3,10 @@
 pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
 
-contract EparsFactory {
+
+contract EparsFactory is Context {
     IERC20 public tokenAddress;
     address public factoryOwner;
     uint256 public nftCount = 0;
@@ -12,7 +14,7 @@ contract EparsFactory {
     mapping(uint256 => NFT) public allNFTs;
 
     constructor(IERC20 _tokenAddress) {
-        factoryOwner = msg.sender;
+        factoryOwner = _msgSender();
         tokenAddress = _tokenAddress;
     }
 
@@ -22,7 +24,7 @@ contract EparsFactory {
     }
 
     modifier onlyfactoryOwner() {
-        require(msg.sender == factoryOwner);
+        require(_msgSender() == factoryOwner);
         _;
     }
 
