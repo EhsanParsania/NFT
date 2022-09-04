@@ -1,5 +1,6 @@
 require('dotenv-flow').config()
 require('@nomicfoundation/hardhat-toolbox')
+require('@nomiclabs/hardhat-web3')
 require('@nomiclabs/hardhat-etherscan')
 require('hardhat-watcher')
 
@@ -36,15 +37,15 @@ module.exports = {
       allowUnlimitedContractSize: true
     },
     bscTestnet: {
-      url: process.env.RPC_URL_BSCTEST,
+      url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
       accounts
     },
     bscMain: {
-      url: process.env.RPC_URL_BSCMAIN,
+      url: 'process.env.RPC_URL_BSCMAIN',
       accounts
     },
     goerli: {
-      url: process.env.RPC_URL_GOERLI,
+      url: 'process.env.RPC_URL_GOERLI',
       accounts
     }
   },
