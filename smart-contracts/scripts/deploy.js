@@ -15,8 +15,12 @@ async function main() {
 
   console.log(`EPARS deployed to ${epars.address}`)
 
+  const EparsFactory = await hre.ethers.getContractFactory('EparsFactory')
+  const eparsFactory = await EparsFactory.deploy(epars.address)
 
+  await eparsFactory.deployed()
 
+  console.log(`EparsFactory deployed to ${eparsFactory.address}`)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
