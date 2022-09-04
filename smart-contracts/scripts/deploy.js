@@ -6,6 +6,10 @@
 // global scope, and execute the script.
 const hre = require('hardhat')
 
+const fs = require('fs')
+const path = require('path')
+const buildPath = path.resolve(__dirname, '../build')
+if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath)
 
 async function main() {
   const EPARS = await hre.ethers.getContractFactory('EPARS')
@@ -21,6 +25,12 @@ async function main() {
   await eparsFactory.deployed()
 
   console.log(`EparsFactory deployed to ${eparsFactory.address}`)
+
+
+  fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
+    `EPARS = ${epars.address}
+  EparsFactory = ${eparsFactory.address}`
+  )
 }
 
 // We recommend this pattern to be able to use async/await everywhere
