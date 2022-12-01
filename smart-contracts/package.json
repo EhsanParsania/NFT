@@ -7,13 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "compile": "rm -rf build && truffle compile",
-    "migrate:dev": "truffle migrate --reset --network development",
-    "migrate:testnet": "truffle migrate --reset --network testnet",
-    "cm:dev": "npm run compile && npm run migrate:dev",
-    "cm:testnet": "npm run compile && npm run migrate:testnet",
-    "migrate:no-compile": "truffle migrate --compile-none --reset --network testnet",
-    "verify": "truffle run verify EhpToken --network testnet",
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && sexit 1",
     "hardhat:format": "standard --fix",
