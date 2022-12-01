@@ -10,7 +10,6 @@ typechain-types
 #Hardhat files
 cache
 artifacts
-
+build
 .secret
 
-build
