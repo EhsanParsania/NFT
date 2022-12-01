@@ -28,7 +28,7 @@ if (process.env.OWNER_PRIVATE_KEY && process.env.OWNER_PRIVATE_KEY.length === 64
 const accounts = OWNER_PRIVATE_KEY ? [OWNER_PRIVATE_KEY] : undefined
 
 module.exports = {
-  solidity: '0.8.9',
+  solidity: '0.8.17',
   defaultNetwork: 'hardhat',
 
   networks: {
