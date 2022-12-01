@@ -19,6 +19,13 @@ async function main() {
 
   console.log(`EparsFactory deployed to ${eparsFactory.address}`)
 
+  const NFT = await hre.ethers.getContractFactory('NFT')
+  const nft = await NFT.deploy()
+
+  await nft.deployed()
+
+  
+
 
   fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
     `EPARS = ${epars.address}
