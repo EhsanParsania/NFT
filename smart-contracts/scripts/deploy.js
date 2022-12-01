@@ -24,7 +24,7 @@ async function main() {
 
   await nft.deployed()
 
-  
+  console.log(`NFT deployed to ${nft.address}`)
 
 
   fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
