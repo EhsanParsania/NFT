@@ -1,10 +1,11 @@
 import { CryptoCards, Button } from '@web3uikit/core';
 
-export const Card = () => (
+export const NFTCard = () => (
     <>
         <CryptoCards
-            chain="ethereum"
-            bgColor="blue"
+            chain='binance'
+            bgColor='#000'
+            textColor="yellow"
             chainType="Network"
             onClick={console.log}
         />
