@@ -9,7 +9,7 @@ import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import { MainLayer } from '../layers/MainLayer';
-import { Card } from '../components/Card';
+import { NFTCard } from '../components/Card';
 
 export function MainPage() {
     return (
@@ -55,7 +55,7 @@ export function MainPage() {
                 </Box>
             </aside>
             <main id='content'>
-                <Card />
+                <NFTCard />
             </main>
         </>
     );
