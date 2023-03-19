@@ -7,3 +7,11 @@
     width: 80%;
     float: left;
 }
+
+div[data-testid] path {
+    fill: #F0B90B;
+}
+
+div[data-testid]  {
+    fill: #F0B90B;
+}
