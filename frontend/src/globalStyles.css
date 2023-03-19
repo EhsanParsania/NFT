@@ -1,0 +1,9 @@
+#menu {
+    width: 20%;
+    float: left;
+}
+
+#content {
+    width: 80%;
+    float: left;
+}
