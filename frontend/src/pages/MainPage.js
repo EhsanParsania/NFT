@@ -9,7 +9,8 @@ import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import { MainLayer } from '../layers/MainLayer';
-import { NFTCard } from '../components/Card';
+import { Card } from '../components/Card';
+import { NFTCard } from '../components';
 
 export function MainPage() {
     return (
@@ -55,7 +56,13 @@ export function MainPage() {
                 </Box>
             </aside>
             <main id='content'>
-                <NFTCard />
+                {/* <Card /> */}
+                <NFTCard
+                    nft={{
+                        imageUrl: "https://parsefiles.back4app.com/i49JjHmG3TiQULMYV5OWSNEkdtgMrL33PDE8wRL1/30b506d2b6427d3d0077790f90184edb_nft.png",
+                        title: 'My NFT', address: '0xT3rd3Ad...', owner: '0xdfjioe..', price: '2.1'
+                    }}
+                />
             </main>
         </>
     );
