@@ -15,12 +15,6 @@ async function main() {
 
   console.log(`EPARS deployed to ${epars.address}`)
 
-  const EparsFactory = await hre.ethers.getContractFactory('EparsFactory')
-  const eparsFactory = await EparsFactory.deploy(epars.address)
-
-  await eparsFactory.deployed()
-
-  console.log(`EparsFactory deployed to ${eparsFactory.address}`)
 
   const NFT = await hre.ethers.getContractFactory('NFT')
   const nft = await NFT.deploy()
@@ -32,7 +26,6 @@ async function main() {
 
   fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
     `EPARS = ${epars.address}
-     EparsFactory = ${eparsFactory.address}`
   )
 }
 
