@@ -4,6 +4,9 @@ const path = require('path')
 const buildPath = path.resolve(__dirname, '../build')
 if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath)
 
+const isPublicNetwork =  !hre.network.name.includes('local') 
+
+
 async function main() {
   const EPARS = await hre.ethers.getContractFactory('EPARS')
   const epars = await EPARS.deploy()
