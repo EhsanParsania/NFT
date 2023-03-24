@@ -1,0 +1,54 @@
+.nft-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+  }
+  
+  .nft-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover
+  }
+
+  .nft-address{
+    /* font-size: 12px; */
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .nft-content{
+    padding: 0 20px 20px;
+  }
+
+  .nft-owner{
+    color: #0a0a0e;
+    font-weight: bold;
+  }
+
+  .nft-price{
+    color: #030414;
+    font-weight: bold;
+  }
+
+  .buy-nft{
+    /*  */
+    background-color: #f50057;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .buy-nft:hover{
+    background-color: #dd004d;
+    color: #fff;
+  }
