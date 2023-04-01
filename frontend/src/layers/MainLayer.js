@@ -31,6 +31,8 @@ import PhotoIcon from '@mui/icons-material/Photo';
 import SendToMobileIcon from '@mui/icons-material/SendToMobile';
 import Logo from '../asset/persia-icon.png';
 import TextLogo from '../asset/parse.png';
+import OutboxIcon from '@mui/icons-material/Outbox';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -256,8 +258,8 @@ export function MainLayer() {
             </List>
           <Divider />
 
-            <List>
-              <Link to="/account-abstraction">
+            <List className='buttom-list'>
+              <Link to="/account-abstraction" className='menu-link' >
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -267,17 +269,17 @@ export function MainLayer() {
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to="/mint-nft">
+              <Link to="/mint-nft" className='menu-link' >
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <PhotoIcon />
+                     <OutboxIcon />
                     </ListItemIcon>
                     <ListItemText primary="Mint NFT" />
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to="/nft-market">
+              <Link to="/nft-market" className='menu-link'>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -289,44 +291,21 @@ export function MainLayer() {
               </Link>
 
 
-              <Link to="/airdrop">
+              <Link to="/airdrop" className='menu-link' >
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
                       <SendToMobileIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Airdrop PARSE token" />
+                    <ListItemText primary="Airdrop EPARS token" />
                   </ListItemButton>
                 </ListItem>
               </Link>
 
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <DraftsIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Drafts" />
-                </ListItemButton>
-              </ListItem>
-            </List>
-          </nav>
-          <Divider />
-          <nav aria-label="secondary mailbox folders">
-            <List className='buttom-list'>
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText primary="Trash" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
-                  <ListItemText primary="Spam" />
-                </ListItemButton>
-              </ListItem>
-              
-            </List>
             
+            </List>
           </nav>
+         
         </Box>
       </aside>
     </>
