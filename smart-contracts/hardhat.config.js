@@ -47,13 +47,19 @@ module.exports = {
     goerli: {
       url: 'process.env.RPC_URL_GOERLI',
       accounts
-    }
+    },
+    mumbai: {
+      url: 'https://polygon-mumbai.g.alchemy.com/v2/demo',
+      accounts
+    },
   },
   etherscan: {
     apiKey: {
       bscTestnet: process.env.ETHERSCAN_APIKEY_BSCTEST,
       bscMain: process.env.ETHERSCAN_APIKEY_BSCMAIN,
-      rinkeby: process.env.ETHERSCAN_APIKEY_RINKEBY
+      rinkeby: process.env.ETHERSCAN_APIKEY_RINKEBY,
+      goerli: process.env.ETHERSCAN_APIKEY_GOERLI,
+      polygonMumbai: process.env.ETHERSCAN_APIKEY_MUMBAI,
     }
   },
   watcher: {

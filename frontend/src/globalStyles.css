@@ -83,10 +83,79 @@ div .account-text-label {
     filter: invert(1);
 }
 
-#menu > div {
+#menu>div {
     border-right: 1px solid #e9e9e9;
 }
 
-.buttom-list{
-    height: 400px;
+.buttom-list {
+    height: 600px;
 }
+
+.airdrop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.airdrop-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    box-shadow: 0 0px 10px #dadada;
+    padding: 40px;
+    border-radius: 12px;
+    min-width: 650px;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+    font-weight: bold;
+}
+
+.token-address{
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    color: #3f51b5;
+}
+
+.token-address:hover{
+    color: #f50057;
+    cursor: pointer;
+}
+
+.mint-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.mint-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    box-shadow: 0 0px 10px #dadada;
+    padding: 40px;
+    border-radius: 12px;
+    min-width: 650px;
+}
+
+.nft-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+

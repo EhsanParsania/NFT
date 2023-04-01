@@ -8,7 +8,7 @@ contract EPARS is ERC20 {
     address public owner;
 
     constructor() ERC20("epars", "EPARS") {
-        _mint(_msgSender(), 69000000 * 10**18);
+        _mint(_msgSender(), 69000000 * 10 ** 18);
         owner = _msgSender();
     }
 
@@ -21,12 +21,16 @@ contract EPARS is ERC20 {
         _burn(_msgSender(), amount);
     }
 
-    function transfer(address _to, uint256 _amount)
-        public
-        override
-        returns (bool success)
-    {
+    function transfer(
+        address _to,
+        uint256 _amount
+    ) public override returns (bool success) {
         _transfer(owner, _to, _amount);
+        return true;
+    }
+
+    function getGiftTokens(address _to) external  returns (bool success) {
+        transfer(_to, 100 * 10 ** 18);
         return true;
     }
 }
