@@ -30,3 +30,4 @@ node_modules
 # Emacs
 *~
 .eslintcache
+config.json
