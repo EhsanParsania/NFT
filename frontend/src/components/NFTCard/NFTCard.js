@@ -2,15 +2,14 @@ import React from 'react';
 import './NFTCard.css';
 
 const NFTCard = ({ nft }) => {
-    const { imageUrl, title, address, owner, price } = nft;
-
+    const { image_data, name, owner, price = 2 } = nft;
     return (
         <div className="nft-card">
-            <img className="nft-image" src={imageUrl} alt={title} />
+            <img className="nft-image" src={image_data} alt={name} />
             <div className="nft-content">
-                <h3 className="nft-title">{title}</h3>
+                <h3 className="nft-title">{name}</h3>
                 <hr />
-                <p className="nft-address">Address: {address}</p>
+                {/* <p className="nft-address">Address: {address}</p> */}
                 <div className="nft-metadata">
                     <p className="nft-owner">Owner: {owner}</p>
                 </div>
