@@ -30,13 +30,18 @@ export function MainPage() {
     return (
         <>
             <MainLayer />
-            <main id='content'>
-                {
-                    nfts.map((nft, index) => {
-                        return <NFTCard key={index} nft={nft} />
-                    })
-                }
-            </main>
+            <div className='nft-container'>
+                <h1 className='main-page-title'>NFT Marketplace</h1>
+                <div className='nft-box'>
+                    <main id='content'>
+                        {
+                            nfts.map((nft, index) => {
+                                return <NFTCard key={index} nft={nft} />
+                            })
+                        }
+                    </main>
+                </div>
+            </div>
         </>
     );
 }
