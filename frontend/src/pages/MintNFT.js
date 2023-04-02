@@ -9,11 +9,14 @@ import Parse from 'parse'
 function MintNFT() {
     const [fileUrl, setFileUrl] = React.useState(null)
     const [disabled, setDisabled] = React.useState(true)
+    const [loading, setLoading] = React.useState(false)
 
     const mint = async () => {
+        setLoading(true)
         const recipient = '0x34510b2C73e23FBbE59b8294BEE076654df44cCa'
-        const result = mintNFT(recipient, fileUrl)
+        const result = await mintNFT(recipient, fileUrl)
         console.log(result)
+        setLoading(false)
     }
 
     const handleChange = (e) => {
@@ -34,9 +37,18 @@ function MintNFT() {
     return (
         <>
             <MainLayer />
-            <h1>Mint NFT</h1>
-            <Input type="file" placeholder="Recipient" onChange={handleChange} />
-            <button className='mint-nft' disabled={disabled} onClick={mint}>Mint NFT</button>
+            <div className='mint-container'>
+                <h1>Mint NFT</h1>
+                <div className='mint-input'>
+                    <Input type="file" placeholder="Recipient" onChange={handleChange} /><br />
+                    <button className='mint-nft' disabled={disabled} onClick={mint}>
+                        {
+                            loading ? 'Loading...' :
+                                'Mint NFT'
+                        }
+                    </button>
+                </div>
+            </div>
         </>
     )
 }
