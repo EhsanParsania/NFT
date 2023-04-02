@@ -8,24 +8,24 @@ const isPublicNetwork =  !hre.network.name.includes('local')
 
 
 async function main() {
-  const EPARS = await hre.ethers.getContractFactory('EPARS')
-  const epars = await EPARS.deploy()
+  // const EPARS = await hre.ethers.getContractFactory('EPARS')
+  // const epars = await EPARS.deploy()
 
-  await epars.deployed()
+  // await epars.deployed()
 
-  // wait for 5 confirmations
-  await epars.deployTransaction.wait(5)
+  // // wait for 5 confirmations
+  // await epars.deployTransaction.wait(5)
 
-  console.log(`EPARS deployed to ${epars.address}`)
+  // console.log(`EPARS deployed to ${epars.address}`)
 
-  await verifyContract(epars, 'EPARS')
+  // await verifyContract(epars, 'EPARS')
 
-  // const NFT = await hre.ethers.getContractFactory('NFT')
-  // const nft = await NFT.deploy()
+  const NFT = await hre.ethers.getContractFactory('NFT')
+  const nft = await NFT.deploy()
 
-  // await nft.deployed()
+  await nft.deployed()
 
-  // console.log(`NFT deployed to ${nft.address}`)
+  console.log(`NFT deployed to ${nft.address}`)
 
 
   // fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
@@ -33,7 +33,7 @@ async function main() {
   //    NFT = ${nft.address}`
   // )
 
-  // verifyContract(nft, 'NFT')
+  verifyContract(nft, 'NFT')
 }
 
 
