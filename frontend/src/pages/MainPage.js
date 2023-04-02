@@ -10,12 +10,20 @@ export function MainPage() {
         getNFTs();
     }, []);
 
+    const getAddress = async () => {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        return account;
+    };
+
     const getNFTs = async () => {
+        const account = await getAddress();
         try {
             const lastId = await lastNFTId();
             const nfts = [];
             for (let i = 0; i <= lastId; ++i) {
                 const nft = await getNFT(i);
+                nft.owner = account;
                 if (!nft.image_data) continue;
                 nfts.push(nft);
             }
@@ -33,13 +41,13 @@ export function MainPage() {
             <div className='nft-container'>
                 <h1 className='main-page-title'>NFT Marketplace</h1>
                 <div className='nft-box'>
-                    <main id='content'>
+                    {/* <main id='content'> */}
                         {
                             nfts.map((nft, index) => {
-                                return <NFTCard key={index} nft={nft} />
+                                return <NFTCard key={index} nft={nft} number={index} />
                             })
                         }
-                    </main>
+                    {/* </main> */}
                 </div>
             </div>
         </>
