@@ -454,7 +454,7 @@ const ABI = [
        "type":"function"
     }
  ]
-export const NFT_ADDRESS = '0x25599144CF4194aae10132461CD2A57E6AEC4D11'
+export const NFT_ADDRESS = '0x20386e5Dd086Ce8813d94f21404601Ab17Fb0283'
 export const NFT_CONTRACT = new web3Instance.eth.Contract(ABI, NFT_ADDRESS)
 
 export const mintNFT = async (recipient, imageUrl) => {
