@@ -1,2 +1,9 @@
 # NFT
-frontend, backend, and smart-contracts of a complete NFT project &amp; Account abstraction
+Frontend, Backend, and Smart-Contracts of a complete NFT project &amp; Account abstraction
+
+- ⚡  Technologies I used: 
+
+     - ✔  **Blockchain**: Solidity, Hardhat, ERC-4337, ERC-721, ERC-20
+     - ✔  **Frontend**: React, Ethers, WalletConnect, MetaMask, Material-UI
+     - ✔  **Backend**: Parse-server
+
