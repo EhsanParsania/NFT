@@ -8,18 +8,20 @@ const isPublicNetwork =  !hre.network.name.includes('local')
 
 
 async function main() {
-  // const EPARS = await hre.ethers.getContractFactory('EPARS')
-  // const epars = await EPARS.deploy()
+  // Deploy EPARS token
+  const EPARS = await hre.ethers.getContractFactory('EPARS')
+  const epars = await EPARS.deploy()
 
-  // await epars.deployed()
+  await epars.deployed()
 
-  // // wait for 5 confirmations
-  // await epars.deployTransaction.wait(5)
+  // wait for 5 confirmations
+  await epars.deployTransaction.wait(5)
 
-  // console.log(`EPARS deployed to ${epars.address}`)
+  console.log(`EPARS deployed to ${epars.address}`)
+  // Verifying EPARS token
+  await verifyContract(epars, 'EPARS')
 
-  // await verifyContract(epars, 'EPARS')
-
+  // Deploy NFT 
   const NFT = await hre.ethers.getContractFactory('NFT')
   const nft = await NFT.deploy()
 
@@ -33,6 +35,7 @@ async function main() {
   //    NFT = ${nft.address}`
   // )
 
+  // Verifying NFT contract
   verifyContract(nft, 'NFT')
 }
 
