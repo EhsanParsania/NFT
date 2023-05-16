@@ -9,7 +9,8 @@ Frontend, Backend, and Smart-Contracts of a complete NFT project &amp; Account a
 
 #
 
-### Watch demo on youtube 
+
+### Watch demo on youtube  <img src="https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png" width="25"  height="20" alt="12" border="0"/>
 https://youtu.be/2s-zJP-3VzI
 
 #
