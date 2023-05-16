@@ -25,7 +25,6 @@ export function Hash({ hash, shorten, clickable, mode, className }) {
         );
     } else if (shorten === "dynamic") {
         return (
-            /*TODO*/
             <span>{hash}</span>
         );
     }
