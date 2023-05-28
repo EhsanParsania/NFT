@@ -1,4 +1,4 @@
-# Frontend of a NFT project & Account abstraction ###
+# Frontend of a NFT project & Account abstraction #
 
 ### ⚡ Technologies I used: ###
 
