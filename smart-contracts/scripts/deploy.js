@@ -29,12 +29,6 @@ async function main() {
 
   console.log(`NFT deployed to ${nft.address}`)
 
-
-  // fs.writeFileSync(path.join(buildPath, 'deployed contract addresses'),
-  //   `EPARS = ${epars.address}
-  //    NFT = ${nft.address}`
-  // )
-
   // Verifying NFT contract
   verifyContract(nft, 'NFT')
 }
