@@ -154,4 +154,15 @@ async function patchManyAndLog(collection, find, $set, pilot) {
   }
   console.log()
 }
+
+var processStart;
+var progressTotal;
+var progressDate;
+var progressed;
+const initProgress = (total) => {
+  processStart = Date.now()
+  progressTotal = total;
+  progressDate = processStart
+  progressed = 0
+}
 }
