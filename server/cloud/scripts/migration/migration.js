@@ -4,6 +4,7 @@ const { newObjectId } = require('parse-server/lib/cryptoUtils')
 const MongoClient = require('mongodb').MongoClient
 
 function ready (cb, environment = 'development') {
+  process.env.NODE_ENV = environment
   for (let i=0; i<5; i++) {
     const { parsed } = require('dotenv-flow').config({path: './' + '../'.repeat(i)})
     if (parsed.DATABASE_URI) break;
