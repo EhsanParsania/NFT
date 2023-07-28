@@ -65,4 +65,5 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
 
   const CLP = {}
   const allPerms = ['get', 'find', 'count', 'create', 'update', 'delete', 'addField']
+  const specialPeople = ['all', 'users', 'admins'] // in order of most general
 }
