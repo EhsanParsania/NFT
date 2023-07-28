@@ -71,4 +71,16 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
     'users': 'requiresAuthentication',
     'admins': 'role:admin'
   }
+
+  const allOtherPeople = Object.keys(_.omit(clpComplex, specialPeople))
+  clpComplex = _.mapValues(clpComplex,
+    perms => perms
+      .replace('full', 'read,write')
+      .replace('read', 'get,find,count')
+      .replace('write', 'create,update,delete')
+      .split(',')
+      .map(p=>p.trim())
+      .filter(p=>allPerms.includes(p))
+    )
+
 }
