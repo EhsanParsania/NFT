@@ -165,4 +165,19 @@ const initProgress = (total) => {
   progressDate = processStart
   progressed = 0
 }
+const progress = index => {
+  progressed = index
+  const now = Date.now()
+  if (now-progressDate>1000) {
+    const rate = progressed/progressTotal
+    const spent = (now-processStart)/1000
+    const left = (spent / rate) - spent
+    process.stdout.write(`\r`+
+      `Time Spent: ${Math.floor(spent/60)}m ${Math.floor(spent%60)}s    `+
+      `ETA: ${Math.floor(left/60)}m ${Math.floor(left%60)}s    `+
+      `${Math.floor(100*rate) }%              `
+    )
+    progressDate = now
+  }
+}
 }
