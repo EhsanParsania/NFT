@@ -24,7 +24,7 @@ upsertSCHEMA('ClassName', { // FIELDS
   all: 'read',
   users: 'write',
   admins: 'full',
-  admins: 'full',
+  admins: 'full,addField',
   'role:Special': 'create,update',
 })
 */
