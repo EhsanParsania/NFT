@@ -62,4 +62,7 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
     const res = await db.createIndex(_id, mongoIndex, indexOptions)
     console.log('createIndex', _id+':', mongoIndex, indexOptions, ' => ', res)
   }
+
+  const CLP = {}
+  const allPerms = ['get', 'find', 'count', 'create', 'update', 'delete', 'addField']
 }
