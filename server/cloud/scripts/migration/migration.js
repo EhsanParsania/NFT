@@ -28,3 +28,18 @@ upsertSCHEMA('ClassName', { // FIELDS
   'role:Special': 'create,update',
 })
 */
+async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={}, removeOldFields = false) {
+  const fields = {}
+  const fields_options = {}
+  for (const [prop, val] of Object.entries(fieldsComplex)) {
+    const options = []
+    const parts = val instanceof Array ? val : [val]
+    if (parts[1]) options.push(["required", true])
+    if (parts.length==3) options.push(["defaultValue", parts[2]])
+
+    fields[prop] = parts[0] // field type definition
+    if (options.length)
+      fields_options[prop] = Object.fromEntries(options)
+  }
+
+}
