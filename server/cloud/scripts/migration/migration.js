@@ -100,4 +100,21 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
         CLP[perm][people] = true
     })
   })
+
+  const schema_$set_doc = {
+    _id,
+    ...(_.mapKeys(fields_options, (val, key) => `_metadata.fields_options.${key}`)),
+    ...(_.mapKeys(indexes, (val, key) => `_metadata.indexes.${key}`)),
+    '_metadata.class_permissions': {
+      ...CLP,
+      "protectedFields": {"*": []}
+    },
+    objectId: "string",
+    updatedAt: "date",
+    createdAt: "date",
+    ...fields,
+  }
+  if (removeOldFields) await db.collection("_SCHEMA").deleteOne({_id})
+  await upsertOneAndLog(db.collection("_SCHEMA"), {_id}, schema_$set_doc)
+}
 }
