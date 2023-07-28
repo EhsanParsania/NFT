@@ -130,6 +130,13 @@ async function upsertOneAndLog(Collection, criteria, $setDoc) {
     const {modifiedCount, upsertedCount, upsertedId, matchedCount} = result
     console.log('UpSert into', Collection.collectionName, JSON.stringify($setDoc,null,2), {modifiedCount, upsertedCount, upsertedId, matchedCount})
   } catch(e) {
+    const new$SetDoc = _.omit($setDoc, ["_id", "_created_at"])
+    if ((typeof e == "object") && (e.constructor.name.includes("Mongo")) && e.message && e.message.includes('immutable') && e.message.includes('_id')) {
+      const result = await Collection.updateOne(criteria, {$set: new$SetDoc}, {upsert: true})
+      const {modifiedCount, upsertedCount, upsertedId, matchedCount} = result
+      console.log('UpSert into', Collection.collectionName, "without the new id:", new$SetDoc, {modifiedCount, upsertedCount, upsertedId, matchedCount})
+    } else
+      console.log('ERROR: UpSert into', Collection.collectionName, new$SetDoc, typeof e == "object" ? e.message || e : e)
   }
   console.log('')
 }
