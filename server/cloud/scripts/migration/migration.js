@@ -42,4 +42,24 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
       fields_options[prop] = Object.fromEntries(options)
   }
 
+  const indexes = {"_id_": {"_id": 1 }}
+  for (const indexObj of indexComplex) {
+    const unique = indexObj.unique
+    delete indexObj.unique
+    const indexName = Object.keys(indexObj).join('_')
+
+    // SCHEMA indexes
+    indexes[indexName] = indexObj
+
+    const mongoIndex = {}
+    for (const [prop, val] of Object.entries(indexObj)) {
+      const isPointer = (fields[prop]||'')[0] == '*'
+      const fieldName = isPointer ? '_p_'+prop : prop
+      mongoIndex[fieldName] = val
+    }
+
+    const indexOptions = { name: indexName, unique }
+    const res = await db.createIndex(_id, mongoIndex, indexOptions)
+    console.log('createIndex', _id+':', mongoIndex, indexOptions, ' => ', res)
+  }
 }
