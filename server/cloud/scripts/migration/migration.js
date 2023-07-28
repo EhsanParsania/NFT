@@ -23,6 +23,7 @@ function ready (cb, environment = 'development') {
       console.log('MIGRATION ERROR', err)
       process.exit(1)
     })
+    .then(() => process.exit())
 }
 
 ready.dev = cb => ready(cb, 'development')
