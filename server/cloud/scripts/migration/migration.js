@@ -117,4 +117,20 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
   if (removeOldFields) await db.collection("_SCHEMA").deleteOne({_id})
   await upsertOneAndLog(db.collection("_SCHEMA"), {_id}, schema_$set_doc)
 }
+
+async function upsertOneAndLog(Collection, criteria, $setDoc) {
+  if (Collection && typeof Collection == "string") {
+    Collection = db.collection(Collection)
+  }
+  if (criteria && typeof criteria == "string") {
+    criteria = {[criteria]: $setDoc[criteria]}
+  }
+  try {
+    const result = await Collection.updateOne(criteria, {$set: $setDoc}, {upsert: true})
+    const {modifiedCount, upsertedCount, upsertedId, matchedCount} = result
+    console.log('UpSert into', Collection.collectionName, JSON.stringify($setDoc,null,2), {modifiedCount, upsertedCount, upsertedId, matchedCount})
+  } catch(e) {
+  }
+  console.log('')
+}
 }
