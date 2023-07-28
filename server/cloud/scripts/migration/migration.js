@@ -2,6 +2,23 @@ var db
 const _ = require('lodash')
 const { newObjectId } = require('parse-server/lib/cryptoUtils')
 const MongoClient = require('mongodb').MongoClient
+
+function ready (cb, environment = 'development') {
+  for (let i=0; i<5; i++) {
+    const { parsed } = require('dotenv-flow').config({path: './' + '../'.repeat(i)})
+    if (parsed.DATABASE_URI) break;
+  }
+  console.log(`Env = ${environment}, App = ${process.env.APP_NAME}`)
+  return new Promise((resolve, reject) => {
+    const mongoClient = new MongoClient(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true, retryWrites: false })
+    mongoClient.connect(async function (err) {
+      if (err) return reject(err)
+      db = mongoClient.db()
+      console.log('Connected to DB: ' + db.databaseName)
+      resolve(db)
+    })
+}
+
 ready.dev = cb => ready(cb, 'development')
 
 /*
@@ -182,6 +199,7 @@ const progress = index => {
 }
 
 module.exports = {
+  ready,
 
   upsertSCHEMA,
   upsertOneAndLog,
