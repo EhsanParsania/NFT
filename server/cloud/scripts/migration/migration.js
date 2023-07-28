@@ -83,4 +83,21 @@ async function upsertSCHEMA(_id, fieldsComplex={}, indexComplex=[], clpComplex={
       .filter(p=>allPerms.includes(p))
     )
 
+  allPerms.forEach(perm => {
+    CLP[perm] = {} // by default, set no perm for anyone
+    const hasThePerm = people => clpComplex[people] && clpComplex[people].includes(perm)
+
+    // first in specialPeople is the most general, and all others specialPeople will inherit the perm
+    for (const people of specialPeople) {
+      if (hasThePerm(people)) {
+        CLP[perm][specialPeopleMap[people]] = true
+        break
+      }
+    }
+
+    allOtherPeople.forEach(people => {
+      if (hasThePerm(people))
+        CLP[perm][people] = true
+    })
+  })
 }
