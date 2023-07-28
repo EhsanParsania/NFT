@@ -180,4 +180,14 @@ const progress = index => {
     progressDate = now
   }
 }
+
+module.exports = {
+
+  upsertSCHEMA,
+  upsertOneAndLog,
+  patchManyAndLog,
+
+  newObjectId,
+  initProgress,
+  progress,
 }
