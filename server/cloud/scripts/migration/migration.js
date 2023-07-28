@@ -140,4 +140,18 @@ async function upsertOneAndLog(Collection, criteria, $setDoc) {
   }
   console.log('')
 }
+
+async function patchManyAndLog(collection, find, $set, pilot) {
+  if (typeof collection == 'string') collection = db.collection(collection)
+  console.log('Updating all records of:', collection.collectionName, pilot ? '(Pilot Mode)' : '')
+  console.log('  Change:', find, '  =>  ', $set)
+  if (pilot) {
+    const matchedCount = await collection.find(find).count()
+    console.log('  Result:', {matchedCount, modifiedCount: 0})
+  } else {
+    const {matchedCount, modifiedCount} = await collection.updateMany(find, {$set})
+    console.log('  Result:', {matchedCount, modifiedCount})
+  }
+  console.log()
+}
 }
