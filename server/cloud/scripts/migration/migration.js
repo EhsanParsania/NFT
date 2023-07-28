@@ -18,6 +18,11 @@ function ready (cb, environment = 'development') {
       console.log('Connected to DB: ' + db.databaseName)
       resolve(db)
     })
+  }).then(cb)
+    .catch((err) => {
+      console.log('MIGRATION ERROR', err)
+      process.exit(1)
+    })
 }
 
 ready.dev = cb => ready(cb, 'development')
