@@ -20,7 +20,7 @@ function ready (cb, environment = 'development') {
     })
   }).then(cb)
     .catch((err) => {
-      console.log('MIGRATION ERROR', err)
+      console.log('ERROR ON MIGRATION: ', err)
       process.exit(1)
     })
     .then(() => process.exit())
