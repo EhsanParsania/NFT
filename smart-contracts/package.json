@@ -15,6 +15,7 @@
     "node": "hardhat node",
     "deploy:testnet": "cross-env NODE_ENV=dev.local GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network bscTestnet",
     "deploy:mumbai": "cross-env NODE_ENV=dev.local GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network mumbai",
+    "deploy:sepolia": "cross-env NODE_ENV=dev.local GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network sepolia",
     "deploy": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy.js --network localhost"
   },
   "author": "ehsan.parsa69@gmail.com",
