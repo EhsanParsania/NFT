@@ -52,6 +52,11 @@ module.exports = {
       url: 'https://polygon-mumbai.g.alchemy.com/v2/demo',
       accounts
     },
+    sepolia: {
+      url: 'https://eth-sepolia.public.blastapi.io',
+      // https://endpoints.omniatech.io/v1/eth/sepolia/public
+      accounts
+    },
   },
   etherscan: {
     apiKey: {
@@ -60,6 +65,7 @@ module.exports = {
       rinkeby: process.env.ETHERSCAN_APIKEY_RINKEBY,
       goerli: process.env.ETHERSCAN_APIKEY_GOERLI,
       polygonMumbai: process.env.ETHERSCAN_APIKEY_MUMBAI,
+      sepolia: process.env.ETHERSCAN_APIKEY_SEPOLIA
     }
   },
   watcher: {
