@@ -465,13 +465,10 @@ export const mintNFT = async (recipient, imageUrl) => {
 
 export const getNFT = async (tokenId) => {
     const tokenURI = await NFT_CONTRACT.methods.tokenURI(tokenId).call()
-  
-    console.log(tokenURI)
     const base64Data = tokenURI.split('base64,')[1]
     const decodedData = Buffer.from(base64Data, 'base64')
     const decodedString = decodedData.toString('ascii')
     const json = JSON.parse(decodedString)
-    console.log(json)
     return json
 }
 
