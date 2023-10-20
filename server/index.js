@@ -13,10 +13,7 @@ const config = {
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
   restAPIKey: process.env.REST_API_KEY,
   clientKey: process.env.CLIENT_KEY,
-  javascriptKey: process.env.JAVASCRIPT_KEY,
-  liveQuery: {
-    classNames: [], // List of classes to support for query subscriptions
-  },
+  javascriptKey: process.env.JAVASCRIPT_KEY
 };
 
 const app = express();
@@ -30,10 +27,6 @@ if (!test) {
   const api = new ParseServer(config);
   app.use(mountPath, api);
 }
-
-// app.get('/', function (req, res) {
-//   res.status(200).send('it works!');
-// });
 
 const port = process.env.PORT || 1337;
 if (!test) {
